@@ -42,23 +42,6 @@ const Register = () => {
                     </Link>
                 }>
                 <form onSubmit={submitForm}>
-                    {/* Name */}
-                    <div>
-                        <Label htmlFor="name">Name</Label>
-
-                        <Input
-                            id="name"
-                            type="text"
-                            value={name}
-                            className="block mt-1 w-full"
-                            onChange={event => setName(event.target.value)}
-                            required
-                            autoFocus
-                        />
-
-                        <InputError messages={errors.name} className="mt-2" />
-                    </div>
-
                     {/* Email Address */}
                     <div className="mt-4">
                         <Label htmlFor="email">Email</Label>
