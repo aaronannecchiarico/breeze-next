@@ -5,7 +5,6 @@ module.exports = {
     content: ['./src/**/*.js'],
     darkMode: 'class',
     purge: {
-        enabled: process.env.NODE_ENV === 'production',
         content: ["./node_modules/@vechaiui/**/*.{js,ts,jsx,tsx}" , "./src/**/*.{js,ts,jsx,tsx}"],
     },
     theme: {
