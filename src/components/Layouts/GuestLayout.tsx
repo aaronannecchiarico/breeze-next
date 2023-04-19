@@ -1,7 +1,11 @@
-import Head from 'next/head'
+import React, { ReactNode } from 'react';
+import Head from 'next/head';
 
-const GuestLayout = ({ children }) => {
-    return (
+interface Props {
+    children?: ReactNode;
+}
+
+const GuestLayout = ({ children }: Props) => (
         <div>
             <Head>
                 <title>Laravel</title>
@@ -11,7 +15,6 @@ const GuestLayout = ({ children }) => {
                 {children}
             </div>
         </div>
-    )
-}
+);
 
-export default GuestLayout
+export {GuestLayout};

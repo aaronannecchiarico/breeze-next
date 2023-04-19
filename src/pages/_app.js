@@ -1,9 +1,6 @@
-import 'tailwindcss/tailwind.css';
-import { VechaiProvider } from "@vechaiui/react";
+import '../styles/globals.css';
 
 const App = ({ Component, pageProps }) =>
-<VechaiProvider>
     <Component {...pageProps} />
-</VechaiProvider>
 
 export default App

@@ -1,5 +1,4 @@
 import React from 'react';
-import { isArray, Tag } from "@vechaiui/react"
 
 const TableComponent = ({ ...props }) => {
     const snakeCase = string => {
@@ -18,7 +17,7 @@ const TableComponent = ({ ...props }) => {
                 </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
-                {props.rows && isArray(props.rows) && props.rows.map((row, index) => (
+                {props.rows && props.rows.map((row, index) => (
                     <React.Fragment key={index}>
                         <tr>
                             {props.headers.map((header, index) => (
@@ -29,9 +28,13 @@ const TableComponent = ({ ...props }) => {
                                                 {
                                                     (snakeCase(header) === 'status') ? (
                                                         (row[snakeCase(header)] === 'active') ? (
-                                                            <Tag color="primary">Active</Tag>
+                                                            <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                                Active
+                                                            </span>
                                                         ) : (
-                                                            <Tag color="warning">Inactive</Tag>
+                                                            <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                                                                Inactive
+                                                            </span>
                                                         )
                                                     ) : (
                                                         row[snakeCase(header)]

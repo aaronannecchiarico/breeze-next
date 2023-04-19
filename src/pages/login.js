@@ -1,15 +1,19 @@
+import { useAuth } from '@/hooks/auth'
+import { useEffect, useState } from 'react'
+
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+
+import { GuestLayout } from '@/components/Layouts/GuestLayout'
+import InputError from '@/components/InputError'
 import ApplicationLogo from '@/components/ApplicationLogo'
 import AuthCard from '@/components/AuthCard'
 import AuthSessionStatus from '@/components/AuthSessionStatus'
-import Button from '@/components/Button'
-import GuestLayout from '@/components/Layouts/GuestLayout'
-import Input from '@/components/Input'
-import InputError from '@/components/InputError'
-import Label from '@/components/Label'
-import Link from 'next/link'
-import { useAuth } from '@/hooks/auth'
-import { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
+
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Checkbox } from '@/components/ui/checkbox'
+import { Button } from '@/components/ui/button'
 
 const Login = () => {
     const router = useRouter()
@@ -96,10 +100,10 @@ const Login = () => {
 
                     {/* Remember Me */}
                     <div className="block mt-4">
-                        <label
+                        <Label
                             htmlFor="remember_me"
                             className="inline-flex items-center">
-                            <input
+                            <Checkbox
                                 id="remember_me"
                                 type="checkbox"
                                 name="remember"
@@ -112,7 +116,7 @@ const Login = () => {
                             <span className="ml-2 text-sm text-gray-600">
                                 Remember me
                             </span>
-                        </label>
+                        </Label>
                     </div>
 
                     <div className="flex items-center justify-end mt-4">
